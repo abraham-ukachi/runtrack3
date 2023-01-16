@@ -67,7 +67,7 @@ Here is a list of all the task/job names, `.php` & `.js` files to be submitted a
 | No. | Name | File(s) | Status |
 |:----|:-----|:-----|:-------|
 | 1 | *`Job 00`* | *N/A* | [Done](#) |
-| 2 | *`Job 01`* | **job01/index.php** | *In progress*  |
+| 2 | *`Job 01`* | **job01/index.php** | [Done](./jour01/job01/index.php)  |
 | 3 | *`Job 02`* | **job02/index.php**, **job02/script.js** | Pending |
 | 4 | *`Job 03`* | **job03/index.php**, **job03/script.js** | Pending |
 | 5 | *`Job 04`* | **job04/index.php**, **job04/script.js** | Pending |
@@ -97,7 +97,7 @@ TBD
 ---
 
 ## Installation
-> IMPORTANT: Make sure you have `XAMPP` already installed in your Linux machine before proceeding.
+> IMPORTANT: Make sure you have `XAMPP` already installed in your Unix machine/ Mac before proceeding.
 
 1. Clone this project's repository
 ```sh
@@ -110,7 +110,7 @@ git clone https://github.com/abraham-ukachi/runtrack3.git
 2. Now, create a symbolic link of **runtrack3** in the `XAMPP`'s **htdocs** folder:
 
 ```sh
-ln -s runtrack3 /opt/lampp/htdocs/runtrack3
+ln -s "runtrack3 /Applications/XAMPP/htdocs/runtrack3
 ```
 
 3. Open the **runtrack3** folder in your default browser:
