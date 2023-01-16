@@ -105,3 +105,4 @@ dist
 
 # Vim files
 *.swp
+*.swo
