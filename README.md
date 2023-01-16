@@ -31,7 +31,7 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 
 | No. | Day | Status |
 | --- | ---- | ------ |
-| 1 | [*`Day 1 - Hello JS`*](#Day-1---Hello-JS) | Pending |
+| 1 | [*`Day 1 - Hello JS`*](#Day-1---Hello-JS) | *In progress* |
 | 2 | [*`Day 2 - ?`*](#Day-2---?) | TBD |
 
 > NOTE: (\*) = still needs to be updated \
