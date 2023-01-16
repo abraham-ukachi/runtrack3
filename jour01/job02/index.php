@@ -24,7 +24,7 @@
 *
 * @project runtrack3
 * @name Jour 1 - Hello JS
-* @job 01
+* @job 02
 * @day 01
 * @file index.php
 * @author: Abraham Ukachi <abraham.ukachi@laplateforme.io>
@@ -32,18 +32,21 @@
 * 
 * Usage:
 *
-*   1-|> open http://localhost/runtrack3/jour01/job01/index.php
+*   1-|> open http://localhost/runtrack3/jour01/job02/index.php
 *
 *
-* ======== Job 01 ==========
+* ======== Job 02 ==========
 *      >>> DESCRIPTION <<<		
 * ~~~~~~~~ (French) ~~~~~~~~~
 *
-* - 
+* - Récupérez une copie de votre fichier index.php. Créez un fichier script.js. 
+*   Modifiez vos fichiers de sorte à ce que l’affichage de la popup se fasse maintenant dans 
+*   le fichier script.js.
 *
 * ~~~~~~~~ (English) ~~~~~~~~
 * 
-* - 
+* - Get a copy of your index.php file. Create a script.js file. Modify your files so that the 
+*   popup is now displayed in the script.js file. 
 *
 * ============================
 * WARNING: This task/job was done in a hurry; my code is therefore not as 'pretty'. #LOL
@@ -58,7 +61,7 @@
 */
 
 
-# YESS!!!! J-A-V-A-S-C-R-I-P-T !!!!!!! :)
+# YESS 😭!!!! J-A-V-A-S-C-R-I-P-T !!!!!!! 😍
 
 
 
@@ -75,11 +78,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
-    <!-- <meta http-equiv="content-type" content="text/html; charset=utf-8"> -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Job1 of Day1 - Runtrack3">
+    <meta name="description" content="Job2 of Day1 - Runtrack3">
 
-    <title>Job01 - Jour01 | Runtrack3</title>
+    <title>Job02 - Jour01 | Runtrack3</title>
 
 
     <!-- Material Icons - https://github.com/google/material-design-icons/tree/master/font -->
@@ -97,7 +99,7 @@
         font-family: 'Material Icons';
         font-weight: normal;
         font-style: normal;
-        font-size: 48px; /* Preferred icon size */
+        font-size: 24px; /* Preferred icon size */
         display: inline-block;
         line-height: 1;
         text-transform: none;
@@ -237,6 +239,7 @@
         border-radius: 24px 24px 00 0;
         max-width: 600px;
         margin: 0 auto;
+        padding-bottom: 100px;
       }
 
       /* Handle */
@@ -252,11 +255,29 @@
       #handle:hover {
         background: yellow;
       }
+      
 
       /* If aside/drawer is closed, 
        * remove pointer events of the drawer's handle */
       aside:not([opened]) #handle {
         pointer-events: none;
+      }
+
+      /* Button */
+      button {
+        margin: 16px 24px;
+        padding: 8px 48px;
+        font-size: 20px;
+        border-radius: 8px;
+        border: 0;
+        cursor: pointer;     
+      }
+
+      /* Hello Button */
+      #helloButton {}
+
+      button > .material-icons {
+        margin: 4px 8px; 
       }
 
       /* Form */
@@ -423,15 +444,20 @@
           transform: translateY(60%);
         }
 
+        /* Button */
+        button {}
+
         /* Toast */
         .toast {
           width: 70%;
           font-size: 16px;
           /* padding: 12px 24px; */
         }
-
+        
+        /* Material Icons */
         .material-icons {
-          font-size: 72px;
+          font-size: 32px;
+          margin: 6px 12px;
         }
 
       }
@@ -439,70 +465,13 @@
       /*** END of Wide Layout - Media Query ***/
 
     </style>
-    
+
 
     
     <!-- Finally, some JS 😀 -->
-    <script>
+    <script src="script.js"></script> 
 
-
-    /**
-     * Displays a dialog with "Hello Javascript!" message
-     * NOTE: This function uses the `alert()` method.
-     */
-    var sayHello = () => alert("Hello Javascript!");
-
-
-    /*
-     * Handler that is called whenever the `<aside>` element is clicked or tapped.
-     *
-     * @param { PointerEvent } event
-     * @param { Element } asideEl
-     */
-    var handleAsideClick = (event, asideEl) => {
-      // Get the aside eleemnt as `asideEl`
-      //let asideEl = event.target;
-      // Check if the aside element is opened using...
-      // ...you guessed it ! "A TERNARY STATMENT !!!"
-      let isOpened = asideEl.hasAttribute('opened') ? true : false;
-
-      // Do nothing if the aside element is already opened.
-      if (isOpened) { return }
-
-      // Open the aside / drawer by setting or adding a 'opened' attribute.
-      asideEl.setAttribute('opened', '');
-
-      // DEBUG [4dbsmaster]: tell me about it :)
-      // console.log(`[handleAsideClick]: asideEl => `, asideEl);
-
-    };
-
-
-    /*
-     * Toggles the Drawer 
-     * This function toggles the 'opened' attribute of `<aside id="drawer">`.
-     */
-    var toggleDrawer = (event) => {
-      // Stop Propagation of the event
-      event.stopPropagation();
-      
-      // Get the drawer element as `drawerEl`
-      let drawerEl = document.getElementById('drawer');
-
-      // Toggle the 'opened' attribute of `drawerEl`
-      drawerEl.toggleAttribute('opened');
-
-      // DEBUG [4dbsmaster]: tell me about it :)
-      // console.log(`[toggleDrawer](1): drawerEl => `, drawerEl);
-      // console.log('[toggleDrawer](2): event => ', event);
-    };
-
-
-
-
-
-    </script>
-
+  
   </head>
   <!-- End of HEAD -->
 
@@ -529,10 +498,14 @@
         <div id="handle" onclick="toggleDrawer(event)"></div>
         
         <!-- H2 Title -->
-        <h2 title="Job 01 of Day1">Job 01 - Day1</h2>
+        <h2 title="Job 02 of Day1">Job 02 - Day1</h2>
 
         <!-- Hello Button -->
-        <button id="helloButton" onclick="sayHello()">Say Hello</button>
+        <button id="helloButton" onclick="sayHello()" class="horizontal layout center">
+          <span>Say&nbsp;</span>
+          <span class="material-icons">waving_hand</span>
+          <span class="material-icons">coffee</span>
+        </button>
 
       </div>
       <!-- End of Aside Container -->
@@ -542,7 +515,7 @@
 
 
     <!-- Toast -->
-    <div id="toast" hidden>
+    <div class="toast" hidden>
       <p><code>👋</code> Hello <span>DBSMaster ;)</span> !</p>
     </div>
     <!-- End of Toast -->
