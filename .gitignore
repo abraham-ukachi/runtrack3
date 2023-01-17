@@ -110,3 +110,6 @@ dist
 *.swl
 *.swk
 *.swm
+
+# .DS_Store file
+.DS_Store
