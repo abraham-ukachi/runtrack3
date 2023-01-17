@@ -159,7 +159,7 @@ These are some of the things I did in addition to this project's [job requiremen
 | ![Job 04 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job04_gui.png) | ![Job 04 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job04_console.png)
 | ![Job 05 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job05_gui.png) | ![Job 05 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job05_console.png)
 | ![Job 06 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job06_gui.png) | ![Job 06 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job06_console.png)
-
+| ![Job 07 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job07_gui.png) | ![Job 07 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job07_console.png)
 
 ---
 
