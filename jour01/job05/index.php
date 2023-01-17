@@ -521,7 +521,7 @@
         <h2 title="Job 05 of Day1">Job 05 - Day1</h2>
 
         <!-- Language Label -->
-        <label for="languages">Pick a lanaguage</label>
+        <label for="languages">Pick a language</label>
 
         <!-- Languages - SELECT -->
         <select id="languages" name="languages">
