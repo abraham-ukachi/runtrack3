@@ -31,8 +31,9 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 
 | No. | Day | Status |
 | --- | ---- | ------ |
-| 1 | [*`Day 1 - Hello JS`*](#Day-1---Hello-JS) | *In progress* |
-| 2 | [*`Day 2 - ?`*](#Day-2---?) | TBD |
+| 1 | [*`Day 1 - Hello JS`*](#Day-1---Hello-JS) | **Paused** |
+| 2 | [*`Day 2 - JS++`*](#Day-2---JS++) | *In progress* |
+| 3 | [*`Day 3 - ?`*](#Day-3---?) | TBD |
 
 > NOTE: (\*) = still needs to be updated \
 >       (TBD) = To Be Determined ;)
@@ -86,7 +87,31 @@ Here is a list of all the task/job names, `.php` & `.js` files to be submitted a
 
 
 <details id=2>
-<summary><h2>Day 2 - ?</h2></summary>
+<summary><h2>Day 2 - JS++</h2></summary>
+
+> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **18/01/2023 at 11:24 AM**.
+
+Here is a list of all the task/job names, `.php` & `.js` files to be submitted and their corresponding / current **status** for this day:
+
+| No. | Name | File(s) | Status |
+|:----|:-----|:-----|:-------|
+| 1 | *`Job 00`* | *N/A* | [Done](#) |
+| 2 | *`Job 01`* | **job01/index.php** | Pending |
+| 3 | *`Job 02`* | **job02/index.php**, **job02/script.js** | Pending |
+| 4 | *`Job 03`* | **job03/index.php**, **job03/script.js** | Pending |
+| 5 | *`Job 04`* | **job04/index.php**, **job04/script.js** | Pending |
+| 6 | *`Job 05`* | **job05/index.php**, **job05/script.js** | Pending |
+| 7 | *`Job 06`* | **job06/index.php**, **job06/script.js** | Pending |
+
+> NOTE: (\*) = still needs to be updated \
+> 			(*N/A*) = no file was required or needed for this particular task.
+
+</details> 
+
+
+
+<details id=3>
+<summary><h2>Day 3 - ?</h2></summary>
 
 TBD
 
@@ -160,6 +185,23 @@ These are some of the things I did in addition to this project's [job requiremen
 | ![Job 05 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job05_gui.png) | ![Job 05 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job05_console.png)
 | ![Job 06 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job06_gui.png) | ![Job 06 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job06_console.png)
 | ![Job 07 of Day 01 - GUI Screenshot](./screenshots/screenshot_jour01_job07_gui.png) | ![Job 07 of Day 01 - Console Screenshot](./screenshots/screenshot_jour01_job07_console.png)
+
+
+
+### Day 02 - Screenshots
+
+| GUI | Console |
+|:----|:--------|
+| Pending | Pending |
+
+
+
+### Day 03 - Screenshots
+
+| GUI | Console |
+|:----|:--------|
+| TBD | TBD |
+
 
 ---
 
