@@ -32,7 +32,7 @@
 * 
 * Usage:
 *
-*   1-|> open http://localhost/runtrack3/jour01/job05/index.php
+*   1-|> open http://localhost/runtrack3/jour01/job06/index.php
 *
 *
 * ======== Job 06 ==========
