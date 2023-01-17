@@ -73,7 +73,7 @@ Here is a list of all the task/job names, `.php` & `.js` files to be submitted a
 | 6 | *`Job 05`* | **job05/index.php**, **job05/script.js** | [Done](./jour01/job05/script.js) |
 | 7 | *`Job 06`* | **job06/index.php**, **job06/script.js** | [Done](./jour01/job06/script.js) |
 | 8 | *`Job 07`* | **job07/index.php**, **job07/script.js** | [Done](./jour01/job07/script.js)\* |
-| 9 | *`Job 08`* | **job08/index.php**, **job08/script.js** | Pending |
+| 9 | *`Job 08`* | **job08/index.php**, **job08/script.js** | _*In progress*_ |
 | 10 | *`Job 09`* | **job09/index.php**, **job09/script.js** | Pending |
 
 > NOTE: (\*) = still needs to be updated \
