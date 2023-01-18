@@ -110,6 +110,7 @@ dist
 *.swl
 *.swk
 *.swm
+*.swj
 
 # .DS_Store file
 .DS_Store
