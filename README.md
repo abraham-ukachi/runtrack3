@@ -193,6 +193,7 @@ These are some of the things I did in addition to this project's [job requiremen
 | GUI | Console |
 |:----|:--------|
 | ![Job 01 of Day 02 - GUI Screenshot](./screenshots/screenshot_jour02_job01_gui.png) | ![Job 01 of Day 02 - Console Screenshot](./screenshots/screenshot_jour02_job01_console.png)
+| ![Job 03 of Day 02 - GUI Screenshot](./screenshots/screenshot_jour02_job03_gui.png) | ![Job 03 of Day 02 - Console Screenshot](./screenshots/screenshot_jour02_job03_console.png)
 
 
 
