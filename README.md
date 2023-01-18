@@ -222,7 +222,7 @@ These are some of the things I did in addition to this project's [job requiremen
 
 | GUI | Console |
 |:----|:--------|
-| TBD | TBD |
+| ![Job 01 of Day 03 - GUI Screenshot](./screenshots/screenshot_jour03_job01_gui.png) | ![Job 01 of Day 03 - Console Screenshot](./screenshots/screenshot_jour03_job01_console.png)
 
 
 
