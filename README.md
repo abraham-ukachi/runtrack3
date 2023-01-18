@@ -1,7 +1,7 @@
 # `runtrack3`
 > IMPORTANT: This is a work in progress and subject to major changes before and/or after the specified **deadline**.
 
-A school project or runtrack including 9 tasks/jobs on the basics of **JavaScript**.
+A fast-paced school project (a.k.a **`runtrack`**) on the basics of **JavaScript** which includes ~9 tasks/jobs per day, and must to be completed in one week. This is the _third time_ we've done this (Check out the previous [runtrack2](https://github.com/abraham-ukachi/runtrack2) and [runtrack1](https://github.com/abraham-ukachi/runtrack)).
 
 Finally!!! Some *`J - A - V - A - S - C - R - I - P - T`* ☕️ !!!! 😍
 Words cannot describe how excited I am to begin these tasks / jobs.
