@@ -39,11 +39,17 @@
       >>> DESCRIPTION <<<		
 * ~~~~~~~~ (French) ~~~~~~~~~
 *
-* - C 
+* - Créez une balise <button> et sélectionnez-la dans votre code JavaScript. 
+* - En cliquant sur le bouton, vous devrez faire apparaître le texte sur votre page HTML :
+*   “Les logiciels et les cathédrales, c'est un peu la même chose - d'abord on les construit, ensuite on prie.”
+* - Ensuite créez un bouton qui servira à cacher tout l’élément html. 
 *
 * ~~~~~~~~ (English) ~~~~~~~~
 * 
-* - C
+* - Create a <button> tag and select it in your JavaScript code.
+* - By clicking on the button, you will have to make the text appear on your HTML page:
+*   “Software and cathedrals are kind of the same thing - first we build them, then we pray.”
+* - Then create a button that will be used to hide the entire html element.
 *
 * ============================
 * WARNING: This task/job was done in a hurry; my code is therefore not as 'pretty'. #LOL
