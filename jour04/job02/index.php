@@ -35,15 +35,19 @@
 *   1-|> open http://localhost/runtrack3/jour04/job02/index.php
 *
 *
-* ======== Job 01 ==========
+* ======== Job 02 ==========
 *      >>> DESCRIPTION <<<		
 * ~~~~~~~~ (French) ~~~~~~~~~
 * 
-* - 
+* - Créez une fonction javascript “jsonValueKey()” qui prend en paramètre 
+*   une chaîne de caractères au format json et une clé.
+* - Cette fonction retourne la valeur liée à cette clé dans la chaîne de caractères.
 *
 * ~~~~~~~~ (English) ~~~~~~~~
 * 
-* -  
+* - Create a javascript function “jsonValueKey()” which takes as parameter 
+*   a character string in json format and a key.
+* - This function returns the value linked to this key in the character string.
 *
 * ============================
 * WARNING: This task/job was done in a hurry; my code is therefore not as 'pretty'. #LOL
@@ -568,7 +572,7 @@
           spellcheck="false"
           class="json-text" 
           placeholder='{"author": "Abraham Ukachi", "project": "runtrack3", "day" : 4, "job": 2}'></textarea>
-        
+         
         <!-- Keys -->
         <label for="keys">Select a key:</label>
         <select id="keys"></select>
