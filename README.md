@@ -4,7 +4,7 @@
 A fast-paced school project (a.k.a **`runtrack`**) on the basics of **JavaScript** which includes ~9 tasks/jobs per day, and must to be completed in one week. This is the _third time_ we've done this (Check out the [previous runtrack](https://github.com/abraham-ukachi/runtrack2)).
 
 Finally!!! Some *`J - A - V - A - S - C - R - I - P - T`* ☕️ !!!! 😍
-Words cannot describe how excited I am to begin these tasks / jobs.
+Words cannot describe how excited I am to begin these tasks `||` jobs `||` hobbies.
 
 **Let's Go!!!!** 🔥🔥🔥  
 
@@ -34,8 +34,8 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 | 1 | [*`Day 1 - Hello JS`*](#Day-1---Hello-JS) | **Paused** |
 | 2 | [*`Day 2 - JS++`*](#Day-2---JS) | **Paused** |
 | 3 | [*`Day 3 - jQuery`*](#Day-3---jQuery) | **Paused** |
-| 4 | [*`Day 4 - Fetch`*](#Day-3---Fetch) | _*In progress*_ |
-| 5 | [*`Day 5 - ?`*](#Day-3---) | TBD |
+| 4 | [*`Day 4 - Fetch`*](#Day-4---Fetch) | _*In progress*_ |
+| 5 | [*`Day 5 - ?`*](#Day-5---) | TBD |
 
 > NOTE: (\*) = still needs to be updated \
 >       (TBD) = To Be Determined ;)
@@ -145,7 +145,7 @@ Here is a list of all the task/job names, `.php` & `.js` files to be submitted a
 | 2 | *`Job 01`* | **job01/index.php**, **job01/script.js** | [Done](./jour04/job01/script.js) |
 | 3 | *`Job 02`* | **job02/index.php**, **job02/script.js** | _*In progress*_ |
 | 4 | *`Job 03`* | **job03/index.php**, **job03/script.js** | Pending |
-| 4 | *`Job 04`* | **job03/index.php**, **job03/script.js** | Pending |
+| 5 | *`Job 04`* | **job03/index.php**, **job03/script.js** | Pending |
 
 > NOTE: (\*) = still needs to be updated \
 > 			(*N/A*) = no file was required or needed for this particular task.
@@ -207,6 +207,7 @@ open http://localhost/runtrack3
 
 
 ## More 
+> IMPORTANT: Check out my source code, if you've got some time. Who knows, you might even fall in love #lmao ;)
 
 These are some of the things I did in addition to this project's [job requirements](#Requirements):
 
@@ -255,7 +256,7 @@ These are some of the things I did in addition to this project's [job requiremen
 
 | GUI 1 | GUI 2 | Console 1 | Console 2 |
 |:------|:------|:----------|:----------|
-| N/A | N/A | N/A | N/A |
+| ![Job 02 of Day 04 - GUI Screenshot](./screenshots/screenshot_jour04_job02_gui.png) | N/A | ![Job 02 of Day 04 - GUI Screenshot](./screenshots/screenshot_jour04_job02_console.png)| N/A |
 
 
 
