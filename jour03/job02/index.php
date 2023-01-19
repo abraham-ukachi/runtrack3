@@ -23,40 +23,51 @@
 * SOFTWARE.
 *
 * @project runtrack3
-* @name Jour 2 - JS++
-* @job 03
-* @day 02
+* @name Jour 3 - jQuery
+* @job 02
+* @day 03
 * @file index.php
 * @author: Abraham Ukachi <abraham.ukachi@laplateforme.io>
 * @version: 0.0.1
 * 
 * Usage:
 *
-*   1-|> open http://localhost/runtrack3/jour02/job03/index.php
+*   1-|> open http://localhost/runtrack3/jour03/job02/index.php
 *
 *
-* ======== Job 03 ==========
-*      >>> DESCRIPTION <<<		
+* ======== Job 02 ==========
+      >>> DESCRIPTION <<<		
 * ~~~~~~~~ (French) ~~~~~~~~~
 *
-* - Créez une balise <button> ayant comme id “button”.
-* - Créez une balise <p> ayant comme id “compteur” et contenant “0”.
-* - Ce contenu doit évoluer proportionnellement au nombre d'événements click reçu par le bouton.
+* - Dans cet exercice, 6 images s’assemblent pour former un arc-en-ciel,
+*   il vous faudra les mélanger puis les remettre en ordre.
 *
-* !!: Vous ne devez pas utiliser “onclick()” dans votre html.
-*             La fonction permettant d’effectuer la modification doit s'appeler “addone()”. 
+* - Le but de ce job sera dans un premier temps de créer une balise <button>. 
+*   Cette balise servira à mélanger l’ensemble des images de l’arc-en-ciel.
+*
+* - Par la suite, vous devrez faire en sorte qu’il soit possible de remettre les images 
+*   dans le bon ordre, en utilisant un ou plusieurs conteneurs.
+*   
+* - Une fois que les 6 images sont ordonnées, un message s’affiche en dessous :
+*   Si l'arc-en-ciel est bien reconstitué, le message “Vous avez gagné” s’affiche en vert.
+*   Sinon, le message “Vous avez perdu” s’affiche en rouge. 
 *
 * ~~~~~~~~ (English) ~~~~~~~~
 * 
-* - Create a <button> tag with the id “button”.
-* - Create a <p> tag with id “counter” and containing “0”.
-* - This content must evolve in proportion to the number of click events received by the button.
+* - In this exercise, 6 images come together to form a rainbow, 
+*   you will have to mix them and then put them back in order.
 *
-* !!: You must not use “onclick()” in your html.
-*     The function making the modification must be called “addone()”.
+* - The goal of this job will initially be to create a <button> tag. 
+*   This tag will be used to mix all the images of the rainbow.
+*
+* - Thereafter, you will have to make it possible to put the images back in the correct order, 
+*   using one or more containers. Once the 6 images are ordered, a message appears below:
+*
+* - If the rainbow is correctly reconstituted, the message “You have won” is displayed in green.
+*   Otherwise, the message “You have lost” is displayed in red.
 *
 * ============================
-* WARNING: This task/job was done in a hurry; my code is therefore not as 'pretty'. #LOL
+* WARNIN;G: This task/job was done in a hurry; my code is therefore not as 'pretty'. #LOL
 * ============================
 */
 
@@ -86,15 +97,15 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Job3 of Day2 - Runtrack3">
+    <meta name="description" content="Job2 of Day3 - Runtrack3">
 
-    <title>Job03 - Jour02 | Runtrack3</title>
+    <title>Job02 - Jour03 | Runtrack3</title>
 
 
     <!-- Material Icons - https://github.com/google/material-design-icons/tree/master/font -->
     <!-- https://material.io/resources/icons/?style=baseline -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    
     
 
     <style>
@@ -185,6 +196,9 @@
         width: inherit;
         height: inherit;
       }
+      
+      
+  
 
       /* Main */
       main {
@@ -200,22 +214,29 @@
         font-size: 72px;
       }
 
+      main > h3 {
+        font-weight: 400;
+        opacity: 0.8;
+      }
+
 
       /* Main Container */
       main > .container {
         /* top: -50px; */
       }
 
-      /* Output */
-      #output {
+      /* Message & Output*/
+      #message, #output {
+        display: none;
         list-style: none;
         margin: 0;
         padding: 16px;
         text-align: center;
       }
 
-      /* Strong in output */
-      #output  strong {
+      /* Strong in output & message */
+      #output strong,
+      #message  strong {
         color: orange;
       }
 
@@ -293,9 +314,6 @@
         border: 0;
         cursor: pointer;     
       }
-
-      /* Hello Button */
-      #helloButton {}
 
       button > .material-icons {
         margin: 4px 8px; 
@@ -455,12 +473,81 @@
         align-items: center;
       }
 
-      /* Counter */
-      p.counter {
-        font-family: courier;
-        font-size: 100px;
+
+       
+      /* Preview  */
+      #preview {
+        width: 90%;
+        height: 60px;
+        list-style: none;
+        margin: 0;
+        padding: 8px 16px;
+        background: #151515;
+        box-sizing: border-box;
+        border-radius: 12px;
       }
+
+
       
+      /* Arc in Preview */
+      #preview .arc {
+        flex: 1;
+        cursor: pointer;
+      }
+
+      /* Hovered Arc in Preview */
+      #preview .arc:hover {
+        background-color: black;
+      }
+
+
+
+      /* Images of in Preview */
+      #preview img,
+      #box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+      }
+
+
+      /* Box */
+      #box {
+        width: 90%;
+        height: 300px;
+        list-style: none;
+        margin: 48px 0;
+        padding: 0;
+        outline: 3px solid darkgray;
+        border-radius: 24px;
+      }
+
+
+      /* Arc in Box */
+      #box .arc {      
+        flex: 1;  
+        pointer-events: none;
+        user-select: none;
+        margin: 4px;
+      }
+
+      /* Status */
+      #status {
+        font-weight: bold;
+        padding: 12px;
+      }
+
+      /* Success - Status */
+      #status.success {
+        color: lightgreen;
+      }
+
+      /* Error - Status */
+      #status.error {
+        color: red;
+      }
+
       /*** Wide Layout - Media Query ***/
       @media (min-width: 460px) {
         
@@ -508,8 +595,11 @@
     </style>
 
 
-    
-    <!-- Finally, some JS 😀 -->
+    <!-- jQuery CDN -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+    <script src="../jquery.min.js"></script>
+
+    <!-- Hooray, some JS 😀 -->
     <script src="script.js"></script> 
 
   
@@ -521,18 +611,31 @@
 
     <!-- Result - MAIN -->
     <main id="result" class="vertical layout center">
+      
+      <h3>Pick a random arc</h3>
 
-      <!--===++ [Job 03 - Day 2] (1) ++===-->
+      <!--===++ [Job 02 - Day 3] (1) ++===-->
+      
 
-      <!-- Output -->
-      <div id="output">
-        <!-- Counter -->
-        <p id="compteur" class="counter">0</p>
+      <!-- Preview  -->
+      <ul id="preview" class="arcs horizontal layout">
 
-      </div>
-      <!-- End of Output -->
+        <?php for ($index = 0; $index < 6; $index++) :?>
+        <li arcIndex="<?= $index ?>" class="arc" role="button" tabIndex="0"><img src="assets/arc<?= $index + 1 ?>.png" alt="Image of an arc"></li>
+        <?php endfor; ?>
 
-      <!--===++ End of [Job 03 - Day 2] (1) ++===-->
+      </ul>
+      <!-- End of Preview -->
+
+      <!-- Status -->
+      <span id="status"></span>
+      <!-- End of Status -->
+
+      <!-- Box -->
+      <ul id="box" class="arcs horizontal layout"></ul>
+      <!-- End of  Box -->
+      
+      <!--===++ End of [Job 02 - Day 3] (1) ++===-->
 
 
     </main>
@@ -548,16 +651,18 @@
         <div id="handle"></div>
         
         <!-- H2 Title -->
-        <h2 title="Job 03 of Day2">Job 03 - Day2</h2>
+        <h2 title="Job 02 of Day3">Job 02 - Day3</h2>
         
         
         
-        <!--===++ [Job 03 - Day 2] (2) ++===-->
+        <!--===++ [Job 02 - Day 3] (2) ++===-->
 
-        <!-- Button -->
-        <button id="button" class="horizontal layout center">Add One</button>
+        <!-- Shuffle Button -->
+        <button id="shuffleButton" class="horizontal layout center">Shuffle</button>
+        <!-- Reset Button -->
+        <button id="resetButton" class="horizontal layout center">Reset</button>
 
-        <!--===++ End of [Job 03 - Day 2] (2) ++===-->
+        <!--===++ End of [Job 02 - Day 3] (2) ++===-->
       
           
       </div>
