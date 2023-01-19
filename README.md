@@ -173,7 +173,7 @@ open http://localhost/runtrack3
 
 | Browser | Version | Status | Date | Time
 |:--------|:--------|:-------|:-----|:-----
-| *`Brave`* | **1.46.144** | Testing | 2023-01-16 | 12:22 PM
+| *`Brave`* | **1.46.144** | Testing | 2023-01-19 | 10:51 AM
 | *`Chrome`* | **-** | *Pending* | - | -
 | *`Firefox`* | **-** | *Pending* | - | -
 | *`Safari`* | **-** | *Pending* | - | -
@@ -224,6 +224,9 @@ These are some of the things I did in addition to this project's [job requiremen
 |:----|:--------|
 | ![Job 01 of Day 03 - GUI Screenshot](./screenshots/screenshot_jour03_job01_gui.png) | ![Job 01 of Day 03 - Console Screenshot](./screenshots/screenshot_jour03_job01_console.png)
 
+| GUI 1 | GUI 2 | Console 1 | Console 2 |
+|:------|:------|:----------|:----------|
+| ![Job 02 of Day 03 - GUI Screenshot](./screenshots/screenshot_jour03_job02_gui.png) | ![Job 02 of Day 03 - 2nd GUI Screenshot](./screenshots/screenshot_jour03_job02-2_gui.png) | N/A | ![Job 02 of Day 03 - 2nd Console Screenshot](./screenshots/screenshot_jour03_job02-2_console.png)|
 
 
 ### Day 04 - Screenshots
