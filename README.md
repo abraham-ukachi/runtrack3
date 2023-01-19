@@ -143,7 +143,7 @@ Here is a list of all the task/job names, `.php` & `.js` files to be submitted a
 |:----|:-----|:-----|:-------|
 | 1 | *`Job 00`* | *N/A* | [Done](#) |
 | 2 | *`Job 01`* | **job01/index.php**, **job01/script.js** | [Done](./jour04/job01/script.js) |
-| 3 | *`Job 02`* | **job02/index.php**, **job02/script.js** | _*In progress*_ |
+| 3 | *`Job 02`* | **job02/index.php**, **job02/script.js** | [Done](./jour04/job02/script.js)\* |
 | 4 | *`Job 03`* | **job03/index.php**, **job03/script.js** | Pending |
 | 5 | *`Job 04`* | **job03/index.php**, **job03/script.js** | Pending |
 
