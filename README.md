@@ -34,8 +34,8 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 | 1 | [*`Day 1 - Hello JS`*](#Day-1---Hello-JS) | **Paused** |
 | 2 | [*`Day 2 - JS++`*](#Day-2---JS) | **Paused** |
 | 3 | [*`Day 3 - jQuery`*](#Day-3---jQuery) | **Paused** |
-| 4 | [*`Day 4 - Fetch`*](#Day-4---Fetch) | _*In progress*_ |
-| 5 | [*`Day 5 - ?`*](#Day-5---) | TBD |
+| 4 | [*`Day 4 - Fetch`*](#Day-4---Fetch) | **Paused** |
+| 5 | [*`Day 5 - Projet`*](#Day-5---Projet) | _*In progress*_ |
 
 > NOTE: (\*) = still needs to be updated \
 >       (TBD) = To Be Determined ;)
@@ -52,6 +52,7 @@ The folder & file structure of this project:
 - - * **index.php**
 - - * **script.js**
 - [**jour02**](./jour02/)
+- [**jour03**](./jour03/)
 - ...
 - [**screenshots**](./screenshots)
 - LICENSE
@@ -153,13 +154,23 @@ Here is a list of all the task/job names, `.php` & `.js` files to be submitted a
 </details> 
 
 
-<details id=4>
-<summary><h2>Day 5 - ?</h2></summary>
+<details id=5 open>
+<summary><h2>Day 5 - Projet</h2></summary>
 
-TBD
+> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **21/01/2023 at 10:35 AM**.
+
+
+Here is a list of all the task/job names, `.php`, `.js` and other files to be submitted and their corresponding / current **status** for this day:
+
+| No. | Name | File(s) | Status |
+|:----|:-----|:-----|:-------|
+| 1 | *`Job 00`* | *N/A* | [Done](#) |
+| 2 | *`Job 01`* | **index.php**, **script.js** | _*In progress*_ |
+
+> NOTE: (\*) = still needs to be updated \
+> 			(*N/A*) = no file was required or needed for this particular task.
 
 </details> 
-
 
 ---
 
