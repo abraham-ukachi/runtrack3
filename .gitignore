@@ -114,3 +114,6 @@ dist
 
 # .DS_Store file
 .DS_Store
+
+# Template files
+templates/
