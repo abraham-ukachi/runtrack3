@@ -210,9 +210,9 @@ Here is a list of all the task/job names, `.php` and other files to be submitted
 | 1 | *`Job 00`* | *N/A* | [Done](#) |
 | 2 | *`Job 00.9`* | *N/A* | [Done](#) | 
 | 3 | *`Job 01`* | **index.php** | [Done](./jour07/job01/index.php) |
-| 4 | *`Job 02`* | **index.php** | _*In progress*_ |
-| 5 | *`Job 03`* | **index.php** | Pending |
-| 6 | *`Job 04`* | **index.php** | Pending |
+| 4 | *`Job 02`* | **index.php** | [Done](./jour07/job02/index.php) |
+| 5 | *`Job 03`* | **index.php** | [Done](./jour07/job03/index.php) |
+| 6 | *`Job 04`* | **index.php** | _*In progress*_ |
 | 7 | *`Job 05`* | **index.php** | Pending |
 | 8 | *`Bonus`* | **index.php**, **assets**, **db.sql** | Pending |
 
@@ -339,8 +339,7 @@ These are some of the things I did in addition to this project's [job requiremen
 
 | GUI | Console |
 |:----|:--------|
-| TBD | TBD |
-
+| ![Job 03 of Day 07 - GUI Screenshot](./screenshots/screenshot_jour03_job07_gui.png) | N/A
 
 
 ---
