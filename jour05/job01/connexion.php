@@ -127,10 +127,11 @@ if ($user->isConnected()) {
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="author" content="Abraham Ukachi">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Job1 of Day5 - Runtrack3">
+    <meta name="description" content="Login - Job1 of Day5 - Runtrack3">
 
-    <title>Job01 - Jour05 | Runtrack3</title>
+    <title>Login | Job01 - Jour05 | Runtrack3</title>
 
 
     <!-- Material Icons - https://github.com/google/material-design-icons/tree/master/font -->
@@ -352,10 +353,6 @@ if ($user->isConnected()) {
           font-size: 20px;
           font-weight: bold;
       }
-
-      a[role="button"][type="submit"] {
-        text-transform: uppercase;
-      }
         
       a[role="button"]:hover {
         background: white;
@@ -422,6 +419,28 @@ if ($user->isConnected()) {
         color: white;
       }
 
+      fieldset {
+        border-color: dimgray;
+      }
+
+      fieldset input {
+        width: 100%;
+        height: 60px;
+        margin: 12px 0;
+        padding: 8px 16px;
+      }
+
+      fieldset legend {
+        padding: 8px 16px;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+
+      fieldset + button {
+        width: 100%;
+        margin: 24px 0 12px;
+      }
+
       /* Hover styles of all inputs except the submit input button */
       input:not([type="submit"]):hover, select:hover {
         outline: 2px solid white;
@@ -432,7 +451,7 @@ if ($user->isConnected()) {
       }
 
       /* Submit Input */
-      input[type="submit"] {
+      input[type="submit"], button[type="submit"] {
         background: #f0ed0f;
         color: black;
         border-radius: 5px;
@@ -631,10 +650,10 @@ if ($user->isConnected()) {
     </style>
 
 
-    
+     
     <!-- Finally, some JS 😀 -->
     <script src="script.js"></script> 
-    
+
     <script>
       /**
        * Let's wait for our window / current page to load ;)
@@ -643,7 +662,7 @@ if ($user->isConnected()) {
       window.onload = (event) => {
         // Create an object of the `RuntrackApp` class as `runtrackApp` 
         // Make it a global variable
-        window.runtrackApp = new RuntrackApp(PAGE_HOME);
+        window.runtrackApp = new RuntrackApp(PAGE_LOGIN);
 
         /* runtrackApp.toast("Hello, Javascript!", 5000); */
         
@@ -651,7 +670,7 @@ if ($user->isConnected()) {
         
       };
     </script>
-  
+
   </head>
   <!-- End of HEAD -->
 
@@ -683,40 +702,28 @@ if ($user->isConnected()) {
         <div id="handle"></div>
         
         <!-- H2 Title -->
-        <h2 title="Job 01 of Day5">Job 01 - Day5</h2>
+        <h2 title="Job 01 of Day5"><a href="index.php">Job 01 - Day5</a></h2>
         
         
         <!--===++ [Job 01 - Day 5] (2) ++===-->
 
-        <!-- PHP (1): If the user is connected ... -->
-        <?php if ($user->isConnected()) : ?> 
-        <!-- PHP (1): ...show a 'greeting' (H3 Title) -->
-        
-        <h3 id="greeting">Hello <?= $user->getFirstname() ?></h3>
+        <!-- Login Form -->
+        <form id="loginForm" method="post">
+          <fieldset form="loginForm" name="loginInfo">
+            <legend>Login to Runtrack <b>3</b>:</legend>
 
-        <?php else : ?> <!-- PHP (1|Else): User is not connected... -->
-        <!-- PHP (1|Else): ...Show a welcome message & connection links -->
+            <!-- Email Input -->
+            <input id="emailInput" type="email" name="email" placeholder="email" required/>
 
-        <!-- Welcome Message -->
-        <div id="welcomeMessage" class="vertical layout">
-          <span class="material-icons logo">polymer</span>
-          <h3>Welcome to Runtrack3</h3>
-          <p>Log in with your account to continue</p>
-        </div>
-        <!-- End of Welcome Message -->
+            <!-- Password Input -->
+            <input id="passwordInput" type="password" name="password" placeholder="password" required/>
 
-        <!-- Connection Links -->
-        <div id="connectionLInks" class="vertical layout">
-          <!-- Login / Connexion -->
-          <a role="button" tabindex="0" href="connexion.php" confirm>Login</a>
+          </fieldset>
           
-          <!-- Sign Up / Inscription -->
-          <a role="button" tabindex="0" href="inscription.php">Sign Up</a>
-        </div>
-        <!-- End of Connection Links -->
-        
-        <?php endif; ?> 
-        <!-- End of PHP (1) -->
+          <!-- Login Button -->
+          <button id="loginButton" type="submit">Login</button>
+
+        </form>
          
         <!--===++ End of [Job 01 - Day 5] (2) ++===-->
       

@@ -165,7 +165,7 @@ class User extends Database {
       // >> CHALLENGE: Do not use `isset()` in this constructor #LOL
       // << Challenge Accepted !!!
 
-      printf("\n\n[TEST]: NO CONNECTED USER YET!!!\n\n"); 
+      // printf("\n\n[TEST]: NO CONNECTED USER YET!!!\n\n"); 
       
       // get all arguments of this constructor as `args`
       $args = func_get_args();
@@ -243,7 +243,7 @@ class User extends Database {
     // Initialize the `registerResult` variable
     $registerResult = false;
 
-    echo "[register]: before" . "<br>";
+    // echo "[register]: before" . "<br>";
 
     // Do not register this user, if there's a user already connected
     if ($this->isConnected()) {
@@ -253,7 +253,7 @@ class User extends Database {
       return $registerResult;
     }
 
-    echo "[register]: after" . "<br>";
+    // echo "[register]: after" . "<br>";
 
     // Checking all fields/arguments and updating the response (i.e. success, status & message) accordingly...
 
@@ -328,7 +328,7 @@ class User extends Database {
           $pdo_stmt->execute();
 
           // DEBUG [4dbsmaster]: tell me about it ;)
-          printf("\x1b[2m[register](2):\x1b[0m pdo_stmt => %s", print_r($pdo_stmt, true)); 
+          // printf("\x1b[2m[register](2):\x1b[0m pdo_stmt => %s", print_r($pdo_stmt, true)); 
 
           // Update the response accordingly ;)
           $this->updateResponse(1, self::$STATUS_SUCCESS_CREATED, "Registration Successful: User added to database successfully!");
@@ -357,7 +357,7 @@ class User extends Database {
 
 
           // DEBUG [4dbsmaster]: tell me about this `userData` ;)
-          printf("\x1b[2m[register](3):\x1b[0m userData => %s\n", print_r($userData));
+          // printf("\x1b[2m[register](3):\x1b[0m userData => %s\n", print_r($userData));
 
           // Return the user data (i.e. `userData`)
           return $userData;
@@ -372,8 +372,8 @@ class User extends Database {
       }
 
       // DEBUG [4dbsmaster]: tell me about it :)
-      printf("[register](1): email -> $email && password -> $password \n");
-      printf("[register](2): firstname -> $firstname && lastname -> $lastname \n");
+      // printf("[register](1): email -> $email && password -> $password \n");
+      // printf("[register](2): firstname -> $firstname && lastname -> $lastname \n");
 
     }  
 
@@ -406,7 +406,7 @@ class User extends Database {
     case self::VALIDATE_EMAIL:
       // validate the email
       $result = filter_var($value, FILTER_VALIDATE_EMAIL);
-      printf("\n\n[TEST](validate): [VALIDATE_EMAIL] result => $result\n\n");
+      // printf("\n\n[TEST](validate): [VALIDATE_EMAIL] result => $result\n\n");
       break;
 
       /* 
@@ -420,7 +420,7 @@ class User extends Database {
       $value = htmlspecialchars($value); # <- encode special characters
       // password must be at least 6 characters long
       $result = (strlen($value) >= 6) ? true : false;
-      printf("[validate]: password value => %s\n", $value);
+      // printf("[validate]: password value => %s\n", $value);
       break;
     case self::VALIDATE_FIRST_NAME:
       $value = htmlspecialchars($value); # <- encode special characters
@@ -437,7 +437,7 @@ class User extends Database {
     //print_r($value);
 
     // DEBUG [4dbsmaster]: tell me about it ;)
-    printf("\n\x1b[32m[validate]: value => $value & mode => $mode \x1b[0m\n");
+    // printf("\n\x1b[32m[validate]: value => $value & mode => $mode \x1b[0m\n");
 
     // return the `result`
     return $result;
@@ -457,8 +457,8 @@ class User extends Database {
     $connectResult = false;
 
     // DEBUG [4dbsmaster]: tell me about it ;)
-    printf("\n\x1b[32m[connect](1): email => $email & password => $password \x1b[0m\n");
-    printf("\n\x1b[32m[connect](2): this->email => $this->email\x1b[0m\n");
+    // printf("\n\x1b[32m[connect](1): email => $email & password => $password \x1b[0m\n");
+    // printf("\n\x1b[32m[connect](2): this->email => $this->email\x1b[0m\n");
 
     // If either the `email` or `password` is empty...
     if (!isset($email) || !isset($password) 
@@ -489,7 +489,7 @@ class User extends Database {
     // STEP 1: Verifying the email...
 
     // DEBUG [4dbsmaster]: tell me about it ;)
-    printf("\n\n[DEBUG]: Verifying the email ($email) in database...\n\n"); 
+    // printf("\n\n[DEBUG]: Verifying the email ($email) in database...\n\n"); 
     
     // Do not proceed, if this email has not been registered or doesn't exist in the database
     if (!$this->isEmailRegistered($email, false)) {
@@ -527,7 +527,7 @@ class User extends Database {
     ";
      
     // DEBUG [4dbsmaster]: tell me about it
-    printf("[connect]: connect_user_query => %s", $connect_user_query);
+    // printf("[connect]: connect_user_query => %s", $connect_user_query);
     
     
     // Prepare our pdo statement as `pdo_stmt`, using the `connect_user_query`
@@ -578,9 +578,9 @@ class User extends Database {
     }
     
     // DEBUG [4dbsmaster]: tell me about it :)
-    printf("[connect](1): email -> %s && password -> %s\n", $email, $password);
-    printf("[connect](2): hashPassword -> %s && connectResult ? %s\n", $hashPassword, json_encode($connectResult));
-    printf("[connect](3): userData -> %s\n", json_encode($userData));
+    // printf("[connect](1): email -> %s && password -> %s\n", $email, $password);
+    // printf("[connect](2): hashPassword -> %s && connectResult ? %s\n", $hashPassword, json_encode($connectResult));
+    // printf("[connect](3): userData -> %s\n", json_encode($userData));
 
     // Return `connectResult`
     return $connectResult;
@@ -615,7 +615,7 @@ class User extends Database {
     }
      
     // DEBUG [4dbsmaster]: tell me about it :)
-    printf("\x1b[2m[disconnect]:\x1b[0m disconnectResult ? %s\n", json_encode($disconnectResult));
+    // printf("\x1b[2m[disconnect]:\x1b[0m disconnectResult ? %s\n", json_encode($disconnectResult));
 
     // Return `disconnectResult`
     return $disconnectResult;
@@ -649,7 +649,7 @@ class User extends Database {
         $userId = $this->getUserId();
 
         // DEBUG [4dbsmaster]: tell me about it ;)
-        printf("\x1b[2m[delete]:\x1b[0m delete_user_query => %s \n userId => %d", $delete_user_query, $userId);
+        // printf("\x1b[2m[delete]:\x1b[0m delete_user_query => %s \n userId => %d", $delete_user_query, $userId);
 
         // Prepare our PDO Statement as `pdo_stmt`, using the `delete_user_query`
         $pdo_stmt = $this->pdo->prepare($delete_user_query);
@@ -688,7 +688,7 @@ class User extends Database {
     
     
     // DEBUG [4dbsmaster]: tell me about it :)
-    printf("\x1b[2m[delete]:\x1b[0m deleteResult ? %s", json_encode($deleteResult));
+    // printf("\x1b[2m[delete]:\x1b[0m deleteResult ? %s", json_encode($deleteResult));
 
     // Return `deleteResult`
     return $deleteResult;
@@ -756,8 +756,8 @@ class User extends Database {
     }
 
     // DEBUG [4dbsmaster]: tell me about the `updateResult` list
-    printf("[update]: updateResult =:");
-    print_r($updateResult);
+    // printf("[update]: updateResult =:");
+    // print_r($updateResult);
 
     // Return `updateResult`
     return $updateResult;
@@ -941,7 +941,7 @@ class User extends Database {
     }
 
     // DEBUG [4dbsmaster]: tell me about it ;)
-    printf("\x1b[0m[updateFirstname]: getResponseMessage() => {$this->getResponseMessage()} \x1b[0m");
+    // printf("\x1b[0m[updateFirstname]: getResponseMessage() => {$this->getResponseMessage()} \x1b[0m");
 
     // Return `updateFirstnameResult`
     return $updateFirstnameResult;
@@ -1041,13 +1041,13 @@ class User extends Database {
       if ($connected == false) { unset($_SESSION['user']); }
 
       // DEBUG [4dbsmaster]: tell me about it :)
-      printf("[isConected](2): encodedId => %s & userId (decoded) => %s\n", $encodedId, $userId);
+      // printf("[isConected](2): encodedId => %s & userId (decoded) => %s\n", $encodedId, $userId);
 
     }
 
 
       // DEBUG [4dbsmaster]: tell me about it :)
-      printf("[isConected](1): userInSession => %s & connected ? \n", json_encode($userInSession), json_encode($connected));
+      // printf("[isConected](1): userInSession => %s & connected ? \n", json_encode($userInSession), json_encode($connected));
 
     // Return `connected`
     return $connected;
@@ -1103,14 +1103,14 @@ class User extends Database {
         // ...remove that item 
         unset($allInfos[$item]);
         // DEBUG [4dbsmaster]: tell me about it ;)
-        printf("$item has been excluded from the `allInfos` list\n");
+        // printf("$item has been excluded from the `allInfos` list\n");
       }
 
     endif;
 
     
     // DEBUG [4dbsmaster]: tell me about it :)
-    print_r($allInfos);
+    // print_r($allInfos);
 
     
     // Return `allInfos`
@@ -1247,7 +1247,7 @@ class User extends Database {
     }
      
     // DEBUG [4dbsmaster]: tell me about it ;)
-    printf("[getPasswordByEmail]: email => %s & password => %s\n", $email, $password);
+    // printf("[getPasswordByEmail]: email => %s & password => %s\n", $email, $password);
      
     // Return `password`
     return $password;
@@ -1466,7 +1466,7 @@ class User extends Database {
         $this->{$key} = $value;
         
         // DEBUG [4dbsmaster]: tell me about it ;)
-        printf("\n[populateUserData]: key => %s & value => %s\n", $key, $value);
+        // printf("\n[populateUserData]: key => %s & value => %s\n", $key, $value);
       }
 
     }
@@ -1519,13 +1519,13 @@ class User extends Database {
         $updateInfoResult = ($pdo_stmt->rowCount()) ? true : false;
 
         // DEBUG [4dbsmaster]: tell me about it ;)
-        printf("[updateInfo](1): Update successful ? %s \n", json_encode($updateInfoResult));
-        printf("[updateInfo](2): info => %s & value => %s\n", $info, $value);
+        // printf("[updateInfo](1): Update successful ? %s \n", json_encode($updateInfoResult));
+        // printf("[updateInfo](2): info => %s & value => %s\n", $info, $value);
         
       } catch (PDOException $e) { # <- An error occurred during our database update 
         
         // DEBUG [4dbsmaster]: tell me about it ;)
-        printf("[updateInfo]: Error updating `$info` with '$value': %s\n", $e->getMessage());
+        // printf("[updateInfo]: Error updating `$info` with '$value': %s\n", $e->getMessage());
 
         // TODO:? throw an exception here -or- exit / kill the script #LOL
 

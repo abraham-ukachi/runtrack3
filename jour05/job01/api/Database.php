@@ -157,7 +157,7 @@ class Database {
       $this->dbCreation();
     endif;
 
-   print_r($this->getTableQuery());
+   // print_r($this->getTableQuery());
   } 
 
 

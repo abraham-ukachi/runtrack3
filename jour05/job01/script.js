@@ -29,11 +29,11 @@
 * @author: Abraham Ukachi <abraham.ukachi@laplateforme.io>
 *
 * Example usage:
-*   1-|> let runtrackApp = new RuntrackApp();
-*    -|>
+*   1-|> let runtrackApp = new RuntrackApp(PAGE_HOME);
+*    -|> 
 *    -|> runtrackApp.toast("Hello Javascript!");
 *
-*   2-|> //
+*   2-|> // 
 *    -|>
 *    -|> 
 *
@@ -45,27 +45,77 @@
 //         from using undeclared variables among other things ;)
 
 
+// Defining some constants...
+
+// pages
+const PAGE_HOME = 'home';
+const PAGE_LOGIN = 'login';
+const PAGE_REGISTER = 'register';
+
+// input fields
+const FIELD_FIRST_NAME = 'firstname';
+const FIELD_LAST_NAME = 'lastname';
+const FIELD_EMAIL = 'email';
+const FIELD_PASSWORD = 'password';
+const FIELD_CONFIRM_PASSWORD = 'confirmPassword';
+
+// validation method
+const METHOD_VALIDATE_JS = 2; // <- Just having fun w/ `int` #LOL
+const METHOD_VALIDATE_PHP = 3; 
+
+
+// Errors
+// - 'requires' errors
+const ERROR_FNAME_REQUIRED = 'firstnameRequired';
+const ERROR_LNAME_REQUIRED = 'lastnameRequired';
+const ERROR_EMAIL_REQUIRED = 'emailRequired';
+const ERROR_PASS_REQUIRED = 'passRequired';
+// - 'too small' errors
+const ERROR_FNAME_TOO_SMALL = 'firstnameTooSmall';
+const ERROR_LNAME_TOO_SMALL = 'lastnameTooSmall';
+const ERROR_EMAIL_TOO_SMALL = 'emailTooSmall';
+const ERROR_PASS_TOO_SMALL = 'passTooSmall';
+// - 'other' password errors
+const ERROR_PASS_UPPER_LOWER = 'passUpperLower';
+const ERROR_PASS_NO_NUMBER = 'passNoNumber';
+const ERROR_PASS_NOT_MATCH = 'passNotMatch';
+// - 'other' email errors
+const ERROR_EMAIL_INVALID = 'emailInvalid';
+const ERROR_ALREADY_EXISTS = 'emailAlreadyExists';
+// - 'other' errors
+const ERROR_NO_SPEC_CHARS_ALLOWED = 'noSpecCharsAllowed';
+
 
 // Create a class named `RuntrackApp`
 class RuntrackApp {
   
-  // TODO: define some constants
-  // TODO: define some attributes
-  // TODO: define some properties
+  // TODO: Define some properties
+
+  // private attributes
+  #page;
 
   // private fields 
   #_toastTimer;
+  #_errorMessages;
 
 
   /**
    * Constructor of this `RuntrackApp` class.
    * NOTE: This constructor will get executed automatically 
    * whenever a new object (eg. `runtrackApp`) is created
+   *
+   * @param { String } page - The current page of the app. `PAGE_HOME` is default
    */
-  constructor() {
+  constructor(page = PAGE_HOME) {
+  
+    // Initialize the `page`
+    this.#page = page;
 
     // listen to some events
     this.#_addListeners();
+
+    // Load the Error Message Data
+    this.#_loadErrorMessages();
     
   }
 
@@ -73,6 +123,107 @@ class RuntrackApp {
   
   // PUBLIC METHODS
  
+ 
+  /**
+   * Method used to retrieve the error message of the specified `errorId`
+   * 
+   * @param { String } errorId - The associative key of the error message (e.g: "passNotMatch" => "Passwords don't match")
+   *
+   * @return { Message } 
+   */
+  getErrorMessage(errorId) {
+    // TODO: Make sure there're `#_errorMessages` before proceeding ;)
+    
+    // Return the error message from the private `#_validateError` JSON object
+    return this.#_errorMessages[errorId];
+  }
+
+
+  /**
+   * Method used to validate the specified `value` 
+   * of a given input `field` in the registration page.
+   *
+   * TODO:? Rename to `validateSignupField()`
+   *
+   * Example usage:
+   *  
+   *    validateRegistration('Abraham', FIELD_FIRST_NAME, (success, message) => console.log(message));
+   *
+   * @param { String } value - The text value to validate
+   * @param { String } field - The name of the input field (e.g: 'firstname', 'lastname', 'email', etc) 
+   *                           Checkout above declared `FIELD_*` constants
+   * @param { Function } callback - (optional) A callback function to handle the validation responses
+   */
+  validateRegistration(value, field, callback = null) {
+    // Use the input `field` in a switch/case block,
+    // to validate each input field separately 
+    switch(field) {
+      case FIELD_FIRST_NAME:
+        // validate the first name
+        this.#_validateFirstname(value, callback);
+        break;
+      case FIELD_LAST_NAME:
+        // validate the last name
+        this.#_validateLastname(value, callback);
+        break;
+      case FIELD_EMAIL:
+        // validate the email
+        this.#_validateEmail(value, callback);
+        break;
+      case FIELD_PASSWORD:
+        // validate the password
+        this.#_validatePassword(value, callback);
+        break;
+      case FIELD_CONFIRM_PASSWORD:
+        // validate the confirm password
+        this.#_validateConfirmPassword(value, callback);
+        break;
+      default:
+        // do something else by default
+    }
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    console.log(`\x1b[34m[validateRegistration]: value => ${value} & field => ${field} & callback => \x1b[0m`, callback);
+     
+  }
+
+  
+  /**
+   * Method used to validate the specified `value` 
+   * of a given input `field` in the connection or login page.
+   *
+   * TODO:? Rename to `validateLoginField()`
+   *
+   * Example usage:
+   *  
+   *    validateConnection('abraham.ukachi@laplateforme.io', FIELD_EMAIL, (success, message) => console.log(message));
+   *
+   * @param { String } value - The text value to validate
+   * @param { String } field - The name of the input field (e.g: 'email', 'password') 
+   * @param { Function } callback - (optional) A callback function to handle the validation responses
+   */
+  validateConnection(value, field, callback = null) {
+    // Use the input `field` in a switch/case block,
+    // to validate each input field separately 
+    switch(field) {
+      case FIELD_EMAIL:
+        // validate the login field 
+        this.#_validateLoginEmail(value, callback);
+
+        break;
+      case FIELD_PASSWORD:
+        // validate the login password
+        this.#_validateLoginPassword(value, callback);
+        break;
+      default:
+        // do something else by default
+    }
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    console.log(`\x1b[34m[validateConnection]: value => ${value} & field => ${field} & callback => \x1b[0m`, callback);
+     
+  }
+  
   
   /**
    * Method used to retrieve the value of the specified `key` from the given `jsonString`
@@ -109,6 +260,15 @@ class RuntrackApp {
     
     // Return `value`
     return value;
+  }
+
+  /**
+   * Returns the current page of this runtrack3 app.
+   *
+   * @return { String } currentPage
+   */
+  getCurrentPage() {
+    return this.#page;
   }
 
   /* =================== */
@@ -166,34 +326,107 @@ class RuntrackApp {
 
   // PUBLIC GETTERS
 
+ 
   /**
-   * Returns the `<textarea id="jsonText">` element
+   * Returns a list of all the currently available `<input>` elements 
    *
    * @return { Element }
    */
-  get jsonTextEl() {
-    return document.getElementById('jsonText'); 
+  get inputEls() {
+    return document.querySelectorAll('input');
   }
 
   /**
-   * Returns the `<select id="keys">` element.
-   *
-   * @return { Element }
-   */
-  get keysEl() {
-    return document.getElementById('keys');
-  }
-
-  /* ================== */
-
-  /**
-   * Returns the `<main id="result">` element.
+   * Returns the `<form id="registerForm">` element.
    *
    * @return { Element } 
    */
-  get resultEl() {
-    return document.getElementById('result');
+  get registerFormEl() {
+    return document.getElementById('registerForm');
   }
+
+ 
+  /**
+   * Returns the `<form id="loginForm">` element.
+   *
+   * @return { Element } 
+   */
+  get loginFormEl() {
+    return document.getElementById('loginForm');
+  }
+
+  /**
+   * Returns the `<input id="firstnameInput">` element.
+   *
+   * @return { Element } 
+   */
+  get firstnameInputEl() {
+    return document.getElementById('firstnameInput');
+  }
+  
+
+  /**
+   * Returns the `<input id="lastnameInput">` element.
+   *
+   * @return { Element } 
+   */
+  get lastnameInputEl() {
+    return document.getElementById('lastnameInput');
+  }
+ 
+
+  /**
+   * Returns the `<input id="emailInput">` element.
+   *
+   * @return { Element } 
+   */
+  get emailInputEl() {
+    return document.getElementById('emailInput');
+  }
+  
+
+  /**
+   * Returns the `<input id="passwordInput">` element.
+   *
+   * @return { Element } 
+   */
+  get passwordInputEl() {
+    return document.getElementById('passwordInput');
+  }
+
+                                                     
+  /**
+   * Returns the `<input id="confirmPasswordInput">` element.
+   *
+   * @return { Element } 
+   */
+  get confirmPasswordInputEl() {
+    return document.getElementById('confirmPasswordInput');
+  }
+
+
+  /**
+   * Returns the `<input id="registerButton">` element.
+   *
+   * @return { Element } 
+   */
+  get registerButtonEl() {
+    return document.getElementById('registerButtonEl');
+  }
+
+
+  /**
+   * Returns the `<input id="loginButton">` element.
+   *
+   * @return { Element } 
+   */
+  get loginButtonEl() {
+    return document.getElementById('loginButtonEl');
+  }
+
+
+
+  /* ================== */
 
 
   /**
@@ -236,22 +469,75 @@ class RuntrackApp {
   }
 
 
-  /**
-   * Returns the `<button id="button">` element.
-   * IMPORTANT: This is in conformity with this project/runtrack's requirements.
-   *
-   * @return { Element } 
-   */
-  get buttonEl() {
-    return document.getElementById('button');
-  }
-
 
 
 
 
   // PRIVATE METHODS
  
+
+  /**
+   * Validates the given `firstname`
+   *
+   * @param { String } firstname
+   * @param { Function } callback
+   */
+  #_validateFirstname(firstname, callback) {}
+
+
+  /**
+   * Validates the given `lastname`
+   *
+   * @param { String } lastname
+   * @param { Function } callback
+   */
+  #_validateLastname(lastname, callback) {}
+
+
+  /**
+   * Validates the given `email`
+   *
+   * @param { String } email
+   * @param { Function } callback
+   */
+  #_validateEmail(email, callback) {}
+
+
+  /**
+   * Validates the given `password`
+   *
+   * @param { String } password
+   * @param { Function } callback
+   */
+  #_validatePassword(password, callback) {}
+
+
+  /**
+   * Validates the given `confirmPassword`
+   *
+   * @param { String } confirmPassword
+   * @param { Function } callback
+   */
+  #_validateConfirmPassword(confirmPassword, callback) {}
+
+
+  /**
+   * Validates the given `loginEmail`
+   *
+   * @param { String } loginEmail
+   * @param { Function } callback
+   */
+  #_validateLoginEmail(loginEmail, callback) {}
+
+
+  /**
+   * Validates the given `loginPassword`
+   *
+   * @param { String } loginPassword
+   * @param { Function } callback
+   */
+  #_validateLoginPassword(loginPassword, callback) {}
+  
 
   /**
    * Method used to listen to events fired 
@@ -261,21 +547,92 @@ class RuntrackApp {
    */
   #_addListeners() {
     
-    // Adding some click event listeners...:
+    // Get the current page as `currentPage`
+    let currentPage = this.getCurrentPage();
+    
+    // For each input element in `inputEls`...
+    this.inputEls.forEach((inputEl) => {
+      // ...listen to the 'input' events
+      inputEl.addEventListener('input', (event) => this.#_onInputHandler(event));
+    });
 
+    /*
+
+    // If the current page is 'register'...
+    if (currentPage === PAGE_REGISTER) {
+      // ...add the following event listeners:
+      
+      
+      // listening to 'input' events on firstname, lastname, 
+      // email, password & confirmPassword input elements...
+      this.firstnameInput.addEventListener('input', (event) => this.#_onFirstnameInputHandler(event));
+      this.lastnameInput.addEventListener('input', (event) => this.#_onLastnameInputHandler(event));
+      this.Input.addEventListener('input', (event) => this.#_onEmailInputHandler(event));
+      this.emailInput.addEventListener('input', (event) => this.#_onEmailInputHandler(event));
+      this.emailInput.addEventListener('input', (event) => this.#_onEmailInputHandler(event));
+
+
+
+    }else if (currentPage === PAGE_LOGIN) { // <- current page is 'login'
+      // ...add the following event listeners:
+      
+      // listening to 'input' events on email & password input elements...
+      this.emailInput.addEventListener('input', (event) => this.#_onEmailInputHandler(event));
+      this.passwordInput.addEventListener('input', (event) => this.#_onPasswordInputHandler(event));
+
+      // listening to 'click' events on login button element...
+      this.loginButtonEl.addEventListener('click', (event) => this.#_onLoginButtonClickHandler(event));
+    }
+    */
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    console.log(`\x1b[32m[#_addListeners]: currentPage => ${currentPage} & inputEls => \x1b[0m`, this.inputEls);
+    
+    // Adding some change event listeners...
+    
+
+    // Adding some click event listeners...:
+    
     // ... to `drawerEl`
     this.drawerEl.addEventListener('click', (event) => this.#_onDrawerClickHandler(event));
     // ... to `handleEl`
     this.handleEl.addEventListener('click', (event) => this.#_onHandleClickHandler(event));
-    // ... to `buttonEl`
-    this.buttonEl.addEventListener('click', (event) => this.#_onButtonClickHandler(event));
 
 
     // Listening to other events...
-         
-    this.jsonTextEl.addEventListener('change', (event) => this.#_onJsonTextChangeHandler(event));
-    // this.jsonTextEl.addEventListener('onkeyup', (event) => this.#_onJsonTextChangeHandler(event));
 
+  }
+ 
+  /**
+   * Loads the error message data of the validation process as a JSON object.
+   * NOTE: This method updates the private `#_errorMessageData` property
+   * 
+   * @private
+   */
+  #_loadErrorMessages() {
+    // Update the `#_errorMessages` property
+    // TODO: Fetch the JSON object asynchronously (i.e. from an outside 'en.json' file using the `fetch()` method)
+    this.#_errorMessages = {
+
+      firstnameRequired: "First name is required",
+      lastnameRequired: "First name is required",
+      emailRequired: "Email is required",
+      passRequired: "Password is required",
+
+      firstnameTooSmall: "First name must be at least 3 characters",
+      lastnameTooSmall: "Last name must be at least 3 characters",
+      emailTooSmall: "Email must be at least 3 characters",
+      passTooSmall: "Password must be at least 6 characters",
+
+      passUpperLower: "Password must contain an upper and lower character",
+      passNoNumber: "Password must have at least one number",
+      passNotMatch: "Passwords don't match",    
+
+      emailInvalid: "Please enter a valid email",      
+      emailAlreadyExists: "This email already exists",   
+      
+      noSpecCharAllowed: "No special characters are allowed"
+    };
   }
 
 
@@ -298,6 +655,40 @@ class RuntrackApp {
    */
   #_hideToast() {
     this.toastEl.hidden = true;
+  }
+
+  /**
+   * Handler that is called whenever the value or text of an `<input>` element changes.
+   *
+   * @param { InputEvent } event
+   */
+  #_onInputHandler(event) {
+    // Get the input element from `event` as `inputEl`
+    let inputEl = event.currentTarget;
+
+    // Get the input/field name from `inputEl` as `field`
+    let field = inputEl.name;
+    // Get the input value from `inputEl` as `value`
+    let value = inputEl.value;
+
+    // Get the current page as `currentPage`
+    let currentPage = this.getCurrentPage();
+   
+    // If the current page is 'register'...
+    if (this.currentPage === PAGE_REGISTER) {
+      // ...validate the registration with the `field` and `value`
+      this.validateRegistration(field, value);
+
+
+    } else { // <- current page is 'login' (at least should be, 'cause we do not have an input in 'home' page)
+      // ...validate the connection with the `field` and `value`
+      this.validateConnection(field, value);
+    }
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    console.log(`\x1b[35m[#_onInputHandler](1): field => ${field} & value => ${value} &  inputEl => \x1b[0m`, inputEl);
+    console.log(`\x1b[35m[#_onInputHandler](2): event => \x1b[0m`, event);
+    
   }
 
 
@@ -343,107 +734,6 @@ class RuntrackApp {
     console.log(`\x1b[2m[#_onHandleClickHandler]: event => `, event);
   }
 
-
-  /**
-   * Handler that is called whenever the `<button id="button">` element is clicked.
-   *
-   * @param { PointerEvent } event
-   * @private
-   */
-  #_onButtonClickHandler(event) {
-    // Get the json text from `jsonTextEl` as `jsonText`
-    let jsonText = this.jsonTextEl.value;
-
-    // Get the json key from `keysEl` as `key`
-    let key = this.keysEl.value;
-    
-    // Get the json value of `key` from `jsonText`,
-    // using the project-specific `jsonValueKey()` method
-    let value = this.jsonValueKey(jsonText, key);
-    
-    // Set this `value` as the text content of `outputEl`
-    this.outputEl.textContent = value;
-    
-    // Close the drawer
-    this.closeDrawer();
-
-    // DEBUG [4dbsmaster]: tell me about it ;)
-    console.log(`\x1b[32m[_onButtonClickHandler](1): jsonText => ${jsonText} & key => ${key}\x1b[0m`, event);
-    console.log(`\x1b[32m[_onButtonClickHandler](2): value => ${value} & event => \x1b[0m`, event);
-  }
-  
-  /**
-   * Handler that is called whenever the value in `<textarea id="jsonText">` element changes.
-   * NOTE: This event is triggered when the `textarea` looses focus.
-   *
-   * @param { ChangeEvent } event
-   * @private
-   */
-  #_onJsonTextChangeHandler(event) {
-    // Empty the `keysEl` 
-    this.keysEl.innerHTML = '';
-
-    // Get the value as element/target as `jsonString`
-    let jsonString = event.currentTarget.value;
-    
-    // Get all keys from this `jsonString`
-    let jsonKeys = this.#_getKeysFromJsonString(jsonString);
-    
-    // For each key in `jsonkeys`...
-    jsonKeys.forEach((jsonKey) => {
-      // ...create an option element with this `jsonKey`
-
-      let optionEl = document.createElement('option');
-      optionEl.value = jsonKey;
-      optionEl.textContent = jsonKey.toUpperCase();
-      
-      // Append `optionEl` to `keysEl`
-      this.keysEl.appendChild(optionEl);
-
-    });
-    
-    
-    // DEBUG [4dbsmaster]: tell me about it ;)
-    console.log(`\x1b[34m[_onJsonTextChangeHandler](1): jsonString => \x1b[35m${jsonString}\x1b[0m`);
-    console.log(`\x1b[34m[_onJsonTextChangeHandler](2): event => \x1b[0m`, event);
-    console.log(`\x1b[34m[_onJsonTextChangeHandler](3): jsonKeys => \x1b[0m`, jsonKeys);
-
-  }
-
-  /**
-   * Returns all the current keys in the specified `jsonString`
-   *
-   * @return { Array } jsonKeys
-   */
-  #_getKeysFromJsonString(jsonString) {
-    // Initialize the `jsonKeys` variable to an empty array
-    let jsonKeys = [];
-
-    try {
-      // Convert `jsonString` into a JSON object
-      let jsonObj = JSON.parse(jsonString);
-
-      // Update the `jsonKeys` by assigning all the keys from `jsonObj`
-      jsonKeys = Object.keys(jsonObj);
-
-      // Remove the 'error' class from the `jsonTextEl`
-      this.jsonTextEl.classList.remove('error');
-      
-    } catch(exception) {
-      // Reset or empty the `jsonKeys` array 
-      // NOTE: not necessary, i know ;) CAN'T I HAVE SOME FUN PLSSS ??!!! #lmao #tempCode
-      jsonKeys = [];
-
-      // Add an 'error' class to the `jsonTextEl`
-      this.jsonTextEl.classList.add('error');
-
-    }
-
-
-    // return `jsonKeys`
-    return jsonKeys;
-  }
-
   
  
   // PRIVATE SETTERS
@@ -451,7 +741,7 @@ class RuntrackApp {
 
   /**
    * Sets the toast message to the given `messageHTML`.
-   *
+   *  
    * @param { String } messageHTML
    * @private
    */
@@ -476,7 +766,6 @@ class RuntrackApp {
     return this.toastEl.textContent.trim();
   }
 
-  
 
 
   
@@ -488,20 +777,6 @@ class RuntrackApp {
 
 
 
-/**
- * Let's wait for our window / current page to load ;)
- * NOTE: This should make sure our document is ready; kinda like `$(document).ready()` on JQuery #LOL
- */
-window.onload = (event) => {
-  // Create an object of the `RuntrackApp` class as `runtrackApp` 
-  // Make it a global variable
-  window.runtrackApp = new RuntrackApp();
-
-  /* runtrackApp.toast("Hello, Javascript!", 5000); */
-  
-  // Do something else/more, when the window is done loading 
-  
-};
 
 
 
