@@ -203,16 +203,18 @@ Here is a list of all the task/job names, `.html`, `.css`, `.js` and other files
 > The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **25/01/2023 at 10:47 AM**.
 
 
-Here is a list of all the task/job names, `.html` and other files to be submitted and their corresponding / current **status** for this day:
+Here is a list of all the task/job names, `.php` and other files to be submitted and their corresponding / current **status** for this day:
 
 | No. | Name | File(s) | Status |
 |:----|:-----|:-----|:-------|
 | 1 | *`Job 00`* | *N/A* | [Done](#) |
-| 1 | *`Job 00.9`* | *N/A* | [Done](#) |
-| 2 | *`Job 01`* | **index.html** | _*In progress*_ |
-| 3 | *`Job 02`* | **index.html** | Pending |
-| 4 | *`Job 03`* | **index.html** | Pending |
-| 5 | *`Job 04`* | **index.html** | Pending |
+| 2 | *`Job 00.9`* | *N/A* | [Done](#) |
+| 3 | *`Job 01`* | **index.php** | _*In progress*_ |
+| 4 | *`Job 02`* | **index.php** | Pending |
+| 5 | *`Job 03`* | **index.php** | Pending |
+| 6 | *`Job 04`* | **index.php** | Pending |
+| 7 | *`Job 05`* | **index.php** | Pending |
+| 8 | *`Bonus`* | **index.php**, **assets**, **db.sql** | Pending |
 
 > NOTE: (\*) = still needs to be updated \
 > 			(*N/A*) = no file was required or needed for this particular task.
