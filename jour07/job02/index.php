@@ -93,7 +93,7 @@
   <!-- End of HEAD -->
 
   <!-- BODY -->
-  <body>
+  <body class="bg-slate-200">
     <!--===++ [Job 01 - Day 7] (1) ++===-->
 
     <!-- HEADER -->
