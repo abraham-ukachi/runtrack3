@@ -37,7 +37,7 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 | 4 | [*`Day 4 - Fetch`*](#Day-4---Fetch) | **Paused** |
 | 5 | [*`Day 5 - Projet`*](#Day-5---Projet) | _*In progress*_ |
 | 6 | [*`Day 6 - Media Queries`*](#Day-6---Media-Queries) | Pending |
-| 7 | [*`Day 7 - Bootstrap`*](#Day-6---Bootstrap) | TBD |
+| 7 | [*`Day 7 - Tailwind`*](#Day-7---Tailwind) | _*In progress*_ |
 
 > NOTE: (\*) = still needs to be updated \
 >       (TBD) = To Be Determined ;)
@@ -197,18 +197,22 @@ Here is a list of all the task/job names, `.html`, `.css`, `.js` and other files
 </details> 
 
 
+<details id=7 open>
+<summary><h2>Day 7 - Tailwind</h2></summary>
 
-<details id=7>
-<summary><h2>Day 7 - Bootstrap</h2></summary>
-
-> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **-?-**.
+> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **25/01/2023 at 10:47 AM**.
 
 
-Here is a list of all the task/job names, `.html`, `.css`, `.js` and other files to be submitted and their corresponding / current **status** for this day:
+Here is a list of all the task/job names, `.html` and other files to be submitted and their corresponding / current **status** for this day:
 
 | No. | Name | File(s) | Status |
 |:----|:-----|:-----|:-------|
-| 1 | TBD | TBD | TBD |
+| 1 | *`Job 00`* | *N/A* | [Done](#) |
+| 1 | *`Job 00.9`* | *N/A* | [Done](#) |
+| 2 | *`Job 01`* | **index.html** | _*In progress*_ |
+| 3 | *`Job 02`* | **index.html** | Pending |
+| 4 | *`Job 03`* | **index.html** | Pending |
+| 5 | *`Job 04`* | **index.html** | Pending |
 
 > NOTE: (\*) = still needs to be updated \
 > 			(*N/A*) = no file was required or needed for this particular task.
@@ -320,6 +324,22 @@ These are some of the things I did in addition to this project's [job requiremen
 | GUI | Console |
 |:----|:--------|
 | TBD | TBD |
+
+
+### Day 06 - Screenshots
+
+| GUI | Console |
+|:----|:--------|
+| TBD | TBD |
+
+
+### Day 07 - Screenshots
+
+| GUI | Console |
+|:----|:--------|
+| TBD | TBD |
+
+
 
 ---
 
