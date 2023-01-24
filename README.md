@@ -208,15 +208,9 @@ Here is a list of all the task/job names, `.php` and other files to be submitted
 | No. | Name | File(s) | Status |
 |:----|:-----|:-----|:-------|
 | 1 | *`Job 00`* | *N/A* | [Done](#) |
-<<<<<<< HEAD
 | 2 | *`Job 00.9`* | *N/A* | [Done](#) | 
 | 3 | *`Job 01`* | **index.php** | [Done](./jour07/job01/index.php) |
 | 4 | *`Job 02`* | **index.php** | _*In progress*_ |
-=======
-| 2 | *`Job 00.9`* | *N/A* | [Done](#) |
-| 3 | *`Job 01`* | **index.php** | _*In progress*_ |
-| 4 | *`Job 02`* | **index.php** | Pending |
->>>>>>> f0d5c0272b82a3dfbc59bbbb1bd58e7d2cd55b87
 | 5 | *`Job 03`* | **index.php** | Pending |
 | 6 | *`Job 04`* | **index.php** | Pending |
 | 7 | *`Job 05`* | **index.php** | Pending |
@@ -264,7 +258,7 @@ open http://localhost/runtrack3
 |:--------|:--------|:-------|:-----|:-----
 | *`Brave`* | **1.46.144** | Testing | 2023-01-19 | 10:51 AM
 | *`Chrome`* | **-** | *Pending* | - | -
-| *`Firefox`* | **-** | *Pending* | - | -
+| *`Firefox`* | **-** | *Pending* | - | - 
 | *`Safari`* | **-** | *Pending* | - | -
 | *`Opera`* | **-** | *Pending* | - | -
 | *`Edge`* | **-** | *Pending* | - | -
