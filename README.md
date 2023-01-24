@@ -36,6 +36,8 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 | 3 | [*`Day 3 - jQuery`*](#Day-3---jQuery) | **Paused** |
 | 4 | [*`Day 4 - Fetch`*](#Day-4---Fetch) | **Paused** |
 | 5 | [*`Day 5 - Projet`*](#Day-5---Projet) | _*In progress*_ |
+| 6 | [*`Day 6 - Media Queries`*](#Day-6---Media-Queries) | Pending |
+| 7 | [*`Day 7 - Bootstrap`*](#Day-6---Bootstrap) | TBD |
 
 > NOTE: (\*) = still needs to be updated \
 >       (TBD) = To Be Determined ;)
@@ -171,6 +173,48 @@ Here is a list of all the task/job names, `.php`, `.js` and other files to be su
 > 			(*N/A*) = no file was required or needed for this particular task.
 
 </details> 
+
+
+<details id=6>
+<summary><h2>Day 6 - Media Queries</h2></summary>
+
+> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **24/01/2023 at 07:54 AM**.
+
+
+Here is a list of all the task/job names, `.html`, `.css`, `.js` and other files to be submitted and their corresponding / current **status** for this day:
+
+| No. | Name | File(s) | Status |
+|:----|:-----|:-----|:-------|
+| 1 | *`Job 00`* | *N/A* | [Done](#) |
+| 2 | *`Job 01`* | **index.html**, **style.css**, **script.js** | Pending |
+| 3 | *`Job 02`* | **index.html**, **style.css**, **script.js** | Pending |
+| 4 | *`Job 03`* | **index.html**, **style.css**, **script.js** | Pending |
+| 5 | *`Job 04`* | **index.html**, **style.css**, **script.js** | Pending |
+
+> NOTE: (\*) = still needs to be updated \
+> 			(*N/A*) = no file was required or needed for this particular task.
+
+</details> 
+
+
+
+<details id=7>
+<summary><h2>Day 7 - Bootstrap</h2></summary>
+
+> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **-?-**.
+
+
+Here is a list of all the task/job names, `.html`, `.css`, `.js` and other files to be submitted and their corresponding / current **status** for this day:
+
+| No. | Name | File(s) | Status |
+|:----|:-----|:-----|:-------|
+| 1 | TBD | TBD | TBD |
+
+> NOTE: (\*) = still needs to be updated \
+> 			(*N/A*) = no file was required or needed for this particular task.
+
+</details> 
+
 
 ---
 
