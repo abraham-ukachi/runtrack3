@@ -38,6 +38,7 @@ Don’t forget to send your changes as soon as a job is advanced or completed an
 | 5 | [*`Day 5 - Projet`*](#Day-5---Projet) | _*In progress*_ |
 | 6 | [*`Day 6 - Media Queries`*](#Day-6---Media-Queries) | Pending |
 | 7 | [*`Day 7 - Tailwind`*](#Day-7---Tailwind) | _*In progress*_ |
+| 8 | [*`Day 8 - Site Perso`*](#Day-8---Site-Perso) | Pending |
 
 > NOTE: (\*) = still needs to be updated \
 >       (TBD) = To Be Determined ;)
@@ -221,6 +222,24 @@ Here is a list of all the task/job names, `.php` and other files to be submitted
 
 </details> 
 
+
+<details id=8>
+<summary><h2>Day 8 - Site Perso</h2></summary>
+
+> The official deadline of the jobs below - according to [intra](https://intra.laplateforme.io) - was **-?-**.
+
+
+Here is a list of all the task/job names, `.php` and other files to be submitted and their corresponding / current **status** for this day:
+
+| No. | Name | File(s) | Status |
+|:----|:-----|:-----|:-------|
+| 1 | *`Job 00`* | *N/A* | [Done](#) |
+| 3 | *`Job 01`* | **?** | _*In progress*_ |
+
+> NOTE: (\*) = still needs to be updated \
+> 			(*N/A*) = no file was required or needed for this particular task.
+
+</details> 
 
 ---
 
